@@ -10,8 +10,14 @@ RUN apt-get -y update && \
 
 WORKDIR /mirror
 
-RUN git clone https://github.com/phpmyadmin/docker.git
+COPY .hgrc /root/
 
-WORKDIR docker
+RUN git clone https://github.com/phpmyadmin/docker.git && \
+    cd docker && \
+    hg init && \
+    hg add && \
+    hg commit &&
+
+WORKDIR /mirror/docker
 
 ENTRYPOINT ["hg", "serve"]
