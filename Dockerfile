@@ -2,6 +2,7 @@ FROM debian
 
 RUN apt-get -y update && \
     apt-get -y install --no-install-recommends \
+        ca-certificates \
         git \
         mercurial \
         && \
