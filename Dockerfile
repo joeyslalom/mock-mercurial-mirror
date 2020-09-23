@@ -16,7 +16,7 @@ RUN git clone https://github.com/phpmyadmin/docker.git && \
     cd docker && \
     hg init && \
     hg add && \
-    hg commit &&
+    hg commit
 
 WORKDIR /mirror/docker
 
